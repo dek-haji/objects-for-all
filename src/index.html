@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../src/main.css">
     <title>One Object For All and All For One</title>
 </head>
 <body>
@@ -15,16 +16,23 @@
     <div id="container"></div>
 
     <h2>More Junk Categories</h2>
+    
     <fieldset>
         <label for="junk__category">Name:</label>
         <input id="junk__category" class="junk__category" type="text" autofocus />
     </fieldset>
-
+    
     <button class="btn category__save" id="btn-saveCategory">Save Junk Category</button>
+    
+    <div class="saveJunk"></div>
+   
+    
 
+
+    <script src="scripts/dbcalls.js"></script>
     <script src="scripts/dom-category.js"></script>
     <script src="scripts/dom-junk.js"></script>
+    <script src="scripts/savejunk.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/dbcalls.js"></script>
 </body>
 </html>

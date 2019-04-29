@@ -5,6 +5,21 @@ const API = {
         return fetch("http://localhost:8088/category")
             .then(response => response.json());
     },
+    saveCategories: function () {
+        return fetch("http://localhost:8088/category")
+            .then(response => response.json())
+            .then(categoryId => {
+                categoryId.forEach(element => {
+                    console.log(element)
+                    let name = element.name
+                    let categoryId = element.id
+                   let catDOM = document.querySelector(".categoryId")
+                   catDOM.innerHTML += `<option value="${categoryId}">${name}</option>`
+                })
+                
+            })
+    },
+
     getJunk: function () {
         return fetch("http://localhost:8088/junk")
             .then(response => response.json());
@@ -25,44 +40,22 @@ const API = {
             },
             body: JSON.stringify(obj)
         })
-        .then(response => response.json())
+        .then(response => response.json());
+    },
+    saveJunk: function (obj) {
+        return fetch("http://localhost:8088/junk",{
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        })
+        .then(response => response.json());
     }
 };
 
-// foodFactory = (foodItem) => {
-//     return `<h2>${foodItem.name}</h2>`;
-// };
 
-// addFoodToDom = (foodAsHTML) => {
-//     el.innerHTML += foodAsHTML;
-// };
 
-// function getData(resource){
-//     el.innerHTML = "";
-
-//     fetch(`http://localhost:8088/${resource}`)
-//         .then(foodResult => {
-//             console.log(foodResult);
-//             return foodResult;
-//         })
-//         .then(foods => foods.json())
-//         .then(parsedFoods => {
-//             parsedFoods.forEach(food => {
-//                 const foodAsHTML = foodFactory(food);
-//                 addFoodToDom(foodAsHTML);
-//             });
-//         });
-// }
-
-// const el = document.querySelector("#container");
-// const getDataButton = document.getElementById("btn-getData");
-// getDataButton.addEventListener("click", () =>  getData("drinks"));
-
-// //the following does not work as expected. function is invoked immediately
-// // getDataButton.addEventListener("click", getData("drinks"));
-
-// const getDataButton2 = document.getElementById("btn-getData2");
-// getDataButton2.addEventListener("click", () => getData("food"));
 
 
 

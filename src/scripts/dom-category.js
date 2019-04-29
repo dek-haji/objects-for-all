@@ -19,6 +19,7 @@ const buildCategoryDom = (data) => {
     });
 };
 
+
 const buildCategoryDetailDom = (data) => {
     console.log("data", data);
     mainContainer.innerHTML = "";

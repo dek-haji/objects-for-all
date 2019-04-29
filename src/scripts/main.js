@@ -23,6 +23,24 @@ handleGetCategoryDetailClick = () => {
         });
 };
 
+// document.querySelector("#btn-saveCategory").addEventListener("click", event => {
+//     const category = document.querySelector(".junk__category").value;
+
+//         // Once you have collected all the values, build your data structure
+//         const categoryObj = {
+//             name: category
+//         };
+
+//     API.saveCategory(categoryObj)
+//     .then(parsedResult => {
+//         console.log("what is the result", parsedResult);
+//     });
+
+// });
+
+
+
+
 document.querySelector("#btn-saveCategory").addEventListener("click", event => {
     const category = document.querySelector(".junk__category").value;
 
@@ -31,12 +49,17 @@ document.querySelector("#btn-saveCategory").addEventListener("click", event => {
             name: category
         };
 
+
+
+
+
     API.saveCategory(categoryObj)
     .then(parsedResult => {
         console.log("what is the result", parsedResult);
     });
 
 });
+
 
 
 document.querySelector("#btn-getJunk").addEventListener("click", handleGetJunkClick);
